@@ -18,28 +18,32 @@ const Products = () => {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const getProducts = async () => {
-    setLoading(true);
-    try {
-      const fetchedProducts = await axios.get(
-        `https://api.airtable.com/v0/${BASE_ID}/products`,
-        {
-          headers: {
-            Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-          },
-        }
-      );
-      setProducts(fetchedProducts.data.records);
-      console.log(products);
-      setLoading(false);
-    } catch (error) {
-      setErrorMessage(error);
-    }
-  };
-
   useEffect(() => {
+    const getProducts = async () => {
+      setLoading(true);
+      try {
+        const fetchedProducts = await axios.get(
+          `https://api.airtable.com/v0/${BASE_ID}/products`,
+          {
+            headers: {
+              Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+            },
+          }
+        );
+        setProducts(fetchedProducts.data.records);
+        setLoading(false);
+      } catch (error) {
+        setErrorMessage(error);
+      }
+    };
     getProducts();
   }, []);
+
+  useEffect(() => {
+    if (products) {
+      console.log(products);
+    }
+  }, [products]);
 
   if (loading) {
     return <Loading />;

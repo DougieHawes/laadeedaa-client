@@ -1,1 +1,17 @@
 @import "variables";
+
+* {
+  box-sizing: border-box;
+  color: $colour1;
+  font-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.app {
+  background-color: rgba($color: $colour2, $alpha: 0.9);
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}

@@ -22,9 +22,9 @@ function App() {
         <Routes>
           <Route exact path="/about" element={<About />} />
           <Route exact path="/blog" element={<Blog />} />
-          <Route exact path="/blog/:id" element={<BlogItem />} />
+          <Route path="/blog/:blogid" element={<BlogItem />} />
           <Route exact path="/contact" element={<Contact />} />
-          <Route exact path="/:id" element={<Product />} />
+          <Route path="/:productid" element={<Product />} />
           <Route exact path="/" element={<Products />} />
         </Routes>
       </BrowserRouter>

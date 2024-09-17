@@ -9,11 +9,11 @@ import "./style.scss";
 import { useParams } from "react-router-dom";
 
 const Product = () => {
-  const productId = useParams("id");
+  const { productid } = useParams();
 
   const Content = () => <div>product content</div>;
 
-  return <Route content={<Content />} title={productId} />;
+  return <Route content={<Content />} title={productid} />;
 };
 
 export default Product;

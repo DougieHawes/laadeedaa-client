@@ -43,7 +43,7 @@ const Products = () => {
     if (products) {
       console.log(products);
     }
-  }, [products]);
+  });
 
   if (loading) {
     return <Loading />;

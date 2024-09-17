@@ -1,8 +1,11 @@
 @import "../../variables";
 
 .route {
-  height: $route-height;
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow: scroll;
   padding: $padding1;
+  padding-top: $header-height;
   .route-title {
     font-size: 42px;
   }

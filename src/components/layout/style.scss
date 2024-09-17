@@ -5,6 +5,8 @@
   max-height: $header-height;
   min-height: $header-height;
   padding: $padding1;
+  position: absolute;
+  width: 100vw;
   .header-logo-container {
     display: flex;
     align-items: center;

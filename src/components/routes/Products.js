@@ -39,12 +39,6 @@ const Products = () => {
     getProducts();
   }, []);
 
-  useEffect(() => {
-    if (products) {
-      console.log(products);
-    }
-  });
-
   if (loading) {
     return <Loading />;
   }

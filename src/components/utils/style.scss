@@ -1,15 +1,25 @@
 @import "../../variables";
 
 .route {
-  max-height: 100vh;
-  min-height: 100vh;
-  overflow: scroll;
-  padding: $padding1;
-  padding-top: $header-height;
-  .route-title {
-    font-size: 42px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  .route-padding {
+    max-height: $header-height;
+    min-height: $header-height;
   }
-  .route-content {
+  .route-container {
+    flex-grow: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: $padding1;
+    .route-title {
+      font-size: 42px;
+      position: absolute;
+    }
+    .route-content {
+      padding-top: 50px;
+    }
   }
 }
 
@@ -34,4 +44,76 @@
 }
 .link-1-contact:hover {
   border-color: rgba($color: $colour3, $alpha: 1);
+}
+
+.card {
+  margin: 0 auto;
+  width: 300px;
+  .card-header {
+    .card-title {
+      font-size: 35px;
+    }
+    .card-subtitle {
+      font-size: 18px;
+      margin: 0 0 $gap1 0;
+      padding-left: $gap1;
+    }
+  }
+  .card-image-container {
+    .card-image {
+      border-radius: $border-radius1;
+      width: 100%;
+    }
+  }
+  .card-main {
+    .card-text {
+      border-bottom: $border1;
+      max-height: 140px;
+      overflow: hidden;
+      padding: $padding1;
+      text-align: justify;
+    }
+    .card-buttons {
+      display: grid;
+      grid-gap: $gap1;
+      grid-template-columns: 1fr 1fr;
+      .card-button-container {
+        display: flex;
+        flex-direction: column;
+        padding-top: $gap1;
+        .card-button-text {
+          font-style: italic;
+          text-align: center;
+        }
+        .card-button {
+          border-radius: $border-radius1;
+          border-style: solid;
+          border-width: $border-width1;
+          color: $colour2;
+          padding: $gap1 0;
+          text-align: center;
+          transition: background-color $transition1 ease-in-out,
+            color $transition1 ease-in-out;
+        }
+        .card-button-red {
+          background-color: $colour4;
+          border-color: $colour4;
+        }
+        .card-button-green {
+          background-color: $colour3;
+          border-color: $colour3;
+        }
+        .card-button-red:hover,
+        .card-button-green:hover {
+          background-color: $colour2;
+        }
+        .card-button-red:hover {
+          color: $colour4;
+        }
+        .card-button-green:hover {
+          color: $colour3;
+        }
+      }
+    }
+  }
 }

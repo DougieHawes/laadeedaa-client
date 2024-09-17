@@ -6,8 +6,21 @@
   font-family: $font2;
   font-style: none;
   margin: 0;
+  overflow-x: hidden;
   padding: 0;
   text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: $gap1;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-thumb {
+  background: $colour3;
+  border-radius: 3px;
 }
 
 .app {

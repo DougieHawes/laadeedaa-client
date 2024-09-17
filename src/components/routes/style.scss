@@ -1,1 +1,7 @@
 @import "../../variables";
+
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $padding1;
+}

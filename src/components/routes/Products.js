@@ -1,6 +1,7 @@
 // file imports
 // components
 // utils
+import { Card1 } from "../utils/cards";
 import ErrorMessage from "../utils/ErrorMessage";
 import Loading from "../utils/Loading";
 import Route from "../utils/Route";
@@ -48,17 +49,16 @@ const Products = () => {
   }
 
   const Content = () => (
-    <div>
+    <div className="products-grid">
       {products.map((p) => (
-        <div key={p.id}>
-          <img
-            src={p.fields.image[0].url}
-            alt={`visual for ${p.fields.title}`}
-          />
-          <h3>{p.fields.title}</h3>
-          <p>{p.fields.subtitle}</p>
-          <div dangerouslySetInnerHTML={{ __html: p.fields.description }}></div>
-        </div>
+        <Card1
+          description={p.fields.description}
+          image={p.fields.image[0].url}
+          key={p.id}
+          stocked={p.fields.stocked}
+          subtitle={p.fields.subtitle}
+          title={p.fields.title}
+        />
       ))}
     </div>
   );

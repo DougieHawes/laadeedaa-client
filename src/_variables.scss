@@ -11,6 +11,18 @@ $border1: $border-width1 solid $colour3;
 // dimensions
 $header-height: 120px;
 
+// flourishes
+$border-radius1: 7px;
+$box-shadow1: 0 4px 7px
+    rgba(
+      $color: $colour1,
+      $alpha: 0.42,
+    ),
+  0 -4px 7px rgba(
+      $color: $colour1,
+      $alpha: 0.42,
+    );
+
 //  fonts
 @font-face {
   font-family: "futura";
@@ -20,7 +32,8 @@ $font1: "futura";
 $font2: "Roboto", sans-serif;
 
 // padding
-$padding1: 7px 2%;
+$gap1: 7px;
+$padding1: $gap1 2%;
 
 // transition
 $transition1: 0.6s;

@@ -3,6 +3,7 @@
 * {
   box-sizing: border-box;
   color: $colour1;
+  font-family: $font2;
   font-style: none;
   margin: 0;
   padding: 0;
@@ -10,8 +11,18 @@
 }
 
 .app {
+  background-blend-mode: screen;
   background-color: rgba($color: $colour2, $alpha: 0.9);
+  background-image: url("./media/images/background.png");
+  background-position: center;
+  background-size: cover;
   max-height: 100vh;
   min-height: 100vh;
   overflow: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font1;
 }

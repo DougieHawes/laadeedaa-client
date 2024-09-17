@@ -3,3 +3,21 @@ $colour1: #3b2f2f;
 $colour2: #fffffc;
 $colour3: #128482;
 $colour4: #d0491e;
+
+// borders
+$border-width1: 2px;
+$border1: $border-width1 solid $colour3;
+
+//  fonts
+@font-face {
+  font-family: "futura";
+  src: url("./media/fonts/FuturaPTLight.otf");
+}
+$font1: "futura";
+$font2: "Roboto", sans-serif;
+
+// padding
+$padding1: 7px 2%;
+
+// transition
+$transition1: 0.6s;

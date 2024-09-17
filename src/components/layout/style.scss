@@ -1,1 +1,34 @@
 @import "../../variables";
+
+.header {
+  border-bottom: $border1;
+  padding: $padding1;
+  .header-logo-container {
+    display: flex;
+    align-items: center;
+    .header-logo {
+      height: auto;
+      max-width: 70px;
+    }
+    .header-title {
+      margin-left: 14px;
+      font-size: 60px;
+    }
+  }
+  .header-links {
+    display: flex;
+    justify-content: space-between;
+    .header-main-links {
+      display: flex;
+      gap: 14px;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .header .header-logo-container .header-title {
+    margin-left: 7px;
+    font-size: 42px;
+  }
+}

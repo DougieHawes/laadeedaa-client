@@ -1,1 +1,33 @@
 @import "../../variables";
+
+.route {
+  padding: $padding1;
+  .route-title {
+    font-size: 42px;
+  }
+  .route-content {
+  }
+}
+
+.link {
+  cursor: pointer;
+}
+.link-1 {
+  border-color: rgba($color: $colour3, $alpha: 0);
+  border-style: solid;
+  border-width: 0 0 $border-width1 0;
+  color: $colour3;
+  font-size: 21px;
+  transition: border-color $transition1 ease-in-out;
+}
+.link-1-contact {
+  border-color: rgba($color: $colour3, $alpha: 0);
+  color: $colour4;
+  font-weight: bold;
+}
+.link-1:hover {
+  border-color: rgba($color: $colour4, $alpha: 1);
+}
+.link-1-contact:hover {
+  border-color: rgba($color: $colour3, $alpha: 1);
+}

@@ -3,9 +3,9 @@ import "./style.scss";
 
 const Route = ({ content, title }) => {
   return (
-    <div>
-      <h2>{title}</h2>
-      <div>{content}</div>
+    <div className="route">
+      <h2 className="route-title">{title}</h2>
+      <div className="route-content">{content}</div>
     </div>
   );
 };

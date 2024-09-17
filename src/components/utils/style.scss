@@ -1,6 +1,7 @@
 @import "../../variables";
 
 .route {
+  height: $route-height;
   padding: $padding1;
   .route-title {
     font-size: 42px;

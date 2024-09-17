@@ -1,4 +1,5 @@
 // file imports
+// style
 import "./style.scss";
 
 const Route = ({ content, title }) => {

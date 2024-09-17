@@ -2,6 +2,8 @@
 
 .header {
   border-bottom: $border1;
+  max-height: $header-height;
+  min-height: $header-height;
   padding: $padding1;
   .header-logo-container {
     display: flex;

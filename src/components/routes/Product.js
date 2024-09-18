@@ -48,7 +48,7 @@ const Product = () => {
   const Content = () => (
     <Card2
       description={description}
-      image={image[0].url}
+      image={image?.[0]?.url}
       stocked={stocked}
       subtitle={subtitle}
     />

@@ -226,6 +226,60 @@
   }
 }
 
+.card3 {
+  margin: 0 auto $gap1 auto;
+  max-width: 600px;
+  .card3-image-container {
+    border-bottom: $border1;
+    border-radius: $border-radius1 $border-radius1 0 0;
+    max-height: 140px;
+    overflow: hidden;
+  }
+  .card3-body {
+    .card3-body-header {
+      padding: $padding1;
+      .card3-title {
+        font-size: 35px;
+      }
+      .card3-date {
+        color: $colour4;
+        font-style: italic;
+        margin-left: $padding1;
+      }
+    }
+    .card3-text-body {
+      max-height: 210px;
+      overflow: hidden;
+      .card3-text {
+        text-align: justify;
+      }
+    }
+  }
+  .card3-buttons {
+    align-items: flex-start;
+    display: flex;
+    height: 42px;
+    justify-content: flex-end;
+    .card3-button {
+      background-color: $colour3;
+      border: $border1;
+      border-radius: $border-radius1;
+      color: $colour2;
+      cursor: pointer;
+      margin-top: 6px;
+      padding: $padding1;
+      text-align: center;
+      transition: background-color $transition1 ease-in-out,
+        color $transition1 ease-in-out;
+      width: 140px;
+    }
+    .card3-button:hover {
+      background-color: $colour2;
+      color: $colour3;
+    }
+  }
+}
+
 @media only screen and (max-width: 769px) {
   .route .route-padding {
     max-height: $header-height2;
@@ -234,5 +288,22 @@
 
   .card2 {
     grid-template-columns: 1fr;
+  }
+
+  .card3 {
+    max-width: 300px;
+    .card3-image-container {
+      max-height: 100px;
+    }
+    .card3-body {
+      .card3-body-header {
+        .card3-title {
+          font-size: 35px;
+        }
+      }
+      .card3-text-body {
+        max-height: 210px;
+      }
+    }
   }
 }

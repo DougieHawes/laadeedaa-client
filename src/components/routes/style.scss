@@ -1,5 +1,12 @@
 @import "../../variables";
 
+.blog-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $padding1;
+  margin-top: 14px;
+}
+
 .contact-form {
   @include align-centre;
   margin-top: $gap1;

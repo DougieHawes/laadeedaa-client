@@ -2,8 +2,8 @@
 // style
 import "./style.scss";
 
-const Message = () => {
-  return <div>Message</div>;
+const ErrorMessage = ({ message }) => {
+  return <div>{message}</div>;
 };
 
-export default Message;
+export default ErrorMessage;

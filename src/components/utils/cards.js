@@ -103,3 +103,28 @@ export const Card2 = ({ description, image, stocked, subtitle, title }) => (
     </div>
   </div>
 );
+
+export const Card3 = ({ date, id, image, text, title }) => (
+  <div className="card3">
+    <div className="card3-image-container">
+      <img className="card3-image" src={image} alt="" />
+    </div>
+    <div className="card3-body">
+      <div className="card3-body-header">
+        <h3 className="card3-title">{title}</h3>
+        <p className="card3-date">{date}</p>
+      </div>
+      <div className="card3-text-body">
+        <div
+          className="card3-text"
+          dangerouslySetInnerHTML={{ __html: text }}
+        ></div>
+      </div>
+    </div>
+    <div className="card3-buttons">
+      <Link className="card3-button" to={`/blog/${id}`}>
+        read more
+      </Link>
+    </div>
+  </div>
+);

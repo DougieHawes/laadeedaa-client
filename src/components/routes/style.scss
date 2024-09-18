@@ -1,5 +1,12 @@
 @import "../../variables";
 
+.contact-form {
+  @include align-centre;
+  margin-top: $gap1;
+  max-width: 600px;
+  width: 100%;
+}
+
 .products-grid {
   display: flex;
   flex-wrap: wrap;

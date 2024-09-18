@@ -7,9 +7,11 @@ $colour4: #d0491e;
 // borders
 $border-width1: 2px;
 $border1: $border-width1 solid $colour3;
+$border2: $border-width1 solid $colour1;
 
 // dimensions
-$header-height: 120px;
+$header-height1: 120px;
+$header-height2: 105px;
 
 // flourishes
 $border-radius1: 7px;
@@ -37,3 +39,8 @@ $padding1: $gap1 2%;
 
 // transition
 $transition1: 0.6s;
+
+@mixin align-centre {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}

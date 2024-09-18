@@ -2,8 +2,9 @@
 
 .header {
   border-bottom: $border1;
-  max-height: $header-height;
-  min-height: $header-height;
+  max-height: $header-height1;
+  min-height: $header-height1;
+  overflow: hidden;
   padding: $padding1;
   position: absolute;
   width: 100vw;
@@ -31,8 +32,12 @@
 }
 
 @media only screen and (max-width: 769px) {
-  .header .header-logo-container .header-title {
-    margin-left: 7px;
-    font-size: 42px;
+  .header {
+    max-height: $header-height2;
+    min-height: $header-height2;
+    .header-logo-container .header-title {
+      margin-left: 7px;
+      font-size: 42px;
+    }
   }
 }

@@ -5,8 +5,8 @@
   flex-direction: column;
   height: 100vh;
   .route-padding {
-    max-height: $header-height;
-    min-height: $header-height;
+    max-height: $header-height1;
+    min-height: $header-height1;
   }
   .route-container {
     flex-grow: 1;
@@ -20,6 +20,51 @@
     .route-content {
       padding-top: 50px;
     }
+  }
+}
+
+.button {
+  background-color: $colour3;
+  border-color: $colour1;
+  border-radius: $border-radius1;
+  border-style: solid;
+  border-width: $border-width1;
+  color: $colour1;
+  cursor: pointer;
+  font-size: 21px;
+  padding: $gap1;
+  text-align: center;
+  transition: border-color $transition1 ease-in-out,
+    color $transition1 ease-in-out;
+  width: 100%;
+}
+.button-active {
+  border-color: $colour3;
+  color: $colour2;
+  transition: background-color $transition1 ease-in-out,
+    color $transition1 ease-in-out;
+}
+.button-active:hover {
+  background-color: $colour2;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $gap1;
+  .input-label {
+    font-size: 21px;
+    font-weight: bold;
+  }
+  .input-box {
+    border: $border1;
+    border-radius: $border-radius1;
+    font-size: 18px;
+    padding: $padding1;
+    width: 100%;
+  }
+  .input2-box {
+    min-height: 210px;
   }
 }
 
@@ -55,8 +100,8 @@
     }
     .card-subtitle {
       font-size: 18px;
-      margin: 0 0 $gap1 0;
-      padding-left: $gap1;
+      margin: 0 0 $padding1 0;
+      padding-left: $padding1;
     }
   }
   .card-image-container {
@@ -115,5 +160,79 @@
         }
       }
     }
+  }
+}
+
+.card2 {
+  display: grid;
+  grid-gap: $gap1;
+  grid-template-columns: 1fr 1fr;
+  .card2-image-container {
+    .card2-image {
+      border-radius: $border-radius1;
+      width: 100%;
+    }
+    .card2-buttons {
+      display: flex;
+      gap: $gap1;
+      .card2-button-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .card2-button-text {
+          font-style: italic;
+          text-align: center;
+        }
+        .card2-button {
+          border-radius: $border-radius1;
+          border-style: solid;
+          border-width: $border-width1;
+          color: $colour2;
+          padding: $padding1;
+          text-align: center;
+          transition: background-color $transition1 ease-in-out,
+            color $transition1 ease-in-out;
+        }
+        .card2-button-red {
+          background-color: $colour4;
+          border-color: $colour4;
+        }
+        .card2-button-green {
+          background-color: $colour3;
+          border-color: $colour3;
+        }
+        .card2-button-red:hover {
+          background-color: $colour2;
+          color: $colour4;
+        }
+        .card2-button-green:hover {
+          background-color: $colour2;
+          color: $colour3;
+        }
+      }
+    }
+  }
+  .card2-main {
+    .card2-main-subtitle {
+      border-bottom: $border2;
+      color: $colour3;
+      font-size: 18px;
+      padding-left: $padding1;
+    }
+    .card2-text {
+      padding: $padding1;
+      text-align: justify;
+    }
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .route .route-padding {
+    max-height: $header-height2;
+    min-height: $header-height2;
+  }
+
+  .card2 {
+    grid-template-columns: 1fr;
   }
 }

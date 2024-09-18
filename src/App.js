@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/blog" element={<Blog />} />
           <Route path="/blog/:blogid" element={<BlogItem />} />
           <Route exact path="/contact" element={<Contact />} />
-          <Route path="/:productid" element={<Product />} />
+          <Route path="/:title" element={<Product />} />
           <Route exact path="/" element={<Products />} />
         </Routes>
       </BrowserRouter>

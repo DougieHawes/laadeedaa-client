@@ -6,7 +6,7 @@ import Route from "../utils/Route";
 import "./style.scss";
 
 const About = () => {
-  const Content = () => <div>about content</div>;
+  const Content = () => <div></div>;
 
   return <Route content={<Content />} title={"about"} />;
 };

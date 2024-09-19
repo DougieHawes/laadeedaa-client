@@ -86,6 +86,7 @@ const About = () => {
               className="about-contact-link"
               href="https://www.etsy.com/uk/shop/LaaDeeDaaUK"
               target="_blank"
+              rel="noreferrer"
             >
               <img
                 className="about-contact-icon"
@@ -106,7 +107,11 @@ const About = () => {
           </div>
           <div className="about-contact-grid-item">
             <p className="about-contact-text">phone</p>
-            <a className="about-contact-link" href="tel:+447742148280">
+            <a
+              className="about-contact-link"
+              href="tel:+447742148280"
+              rel="noreferrer"
+            >
               <img
                 className="about-contact-icon"
                 src={Phone}
@@ -116,7 +121,11 @@ const About = () => {
           </div>
           <div className="about-contact-grid-item">
             <p className="about-contact-text">Whatsapp</p>
-            <a className="about-contact-link" href="https://wa.me/447742148280">
+            <a
+              className="about-contact-link"
+              href="https://wa.me/447742148280"
+              rel="noreferrer"
+            >
               <img
                 className="about-contact-icon"
                 src={Whatsapp}

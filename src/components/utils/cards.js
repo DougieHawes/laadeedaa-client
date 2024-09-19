@@ -104,6 +104,69 @@ export const Card2 = ({ description, image, stocked, subtitle, title }) => (
   </div>
 );
 
+const setToDate = (d) => {
+  let day = d.substring(8, 10);
+  let month = d.split("-")[1];
+  const year = d.substring(2, 4);
+
+  if (day[1] === "1") {
+    day = day + "st";
+  } else if (day[1] === "2") {
+    day = day + "nd";
+  } else if (day[1] === "3") {
+    day = day + "rd";
+  } else {
+    day = day + "th";
+  }
+
+  if (day.charAt(0) === "0") {
+    day = day.substring(1);
+  }
+
+  switch (month) {
+    case "01":
+      month = "January";
+      break;
+    case "02":
+      month = "Feburary";
+      break;
+    case "03":
+      month = "March";
+      break;
+    case "04":
+      month = "April";
+      break;
+    case "05":
+      month = "May";
+      break;
+    case "06":
+      month = "June";
+      break;
+    case "07":
+      month = "July";
+      break;
+    case "08":
+      month = "August";
+      break;
+    case "09":
+      month = "September";
+      break;
+    case "10":
+      month = "October";
+      break;
+    case "11":
+      month = "November";
+      break;
+    case "12":
+      month = "December";
+      break;
+    default:
+      break;
+  }
+
+  return `${day} ${month} '${year}`;
+};
+
 export const Card3 = ({ date, id, image, text, title }) => (
   <div className="card3">
     <div className="card3-image-container">
@@ -112,7 +175,7 @@ export const Card3 = ({ date, id, image, text, title }) => (
     <div className="card3-body">
       <div className="card3-body-header">
         <h3 className="card3-title">{title}</h3>
-        <p className="card3-date">{date}</p>
+        <p className="card3-date">{setToDate(date)}</p>
       </div>
       <div className="card3-text-body">
         <div
@@ -126,5 +189,19 @@ export const Card3 = ({ date, id, image, text, title }) => (
         read more
       </Link>
     </div>
+  </div>
+);
+
+export const Card4 = ({ date, image, text, title }) => (
+  <div className="card4">
+    <div className="card4-image-container">
+      <img className="card4-image" src={image} alt="" />
+    </div>
+    <h3 className="card4-title">{title}</h3>
+    <p className="card4-date">{setToDate(date)}</p>
+    <div
+      className="card4-text"
+      dangerouslySetInnerHTML={{ __html: text }}
+    ></div>
   </div>
 );

@@ -280,6 +280,35 @@
   }
 }
 
+.card4 {
+  margin-top: -35px;
+  .card4-image-container {
+    border-radius: $border-radius1;
+    max-width: 420px;
+    min-width: 300px;
+    width: 100%;
+    @include align-centre;
+    .card4-image {
+      width: 100%;
+    }
+  }
+  .card4-title {
+    font-size: 42px;
+    text-align: center;
+  }
+  .card4-date {
+    color: $colour4;
+    font-size: 21px;
+    font-style: italic;
+    margin-left: $padding1;
+    text-align: center;
+  }
+  .card4-text {
+    padding: $padding1;
+    text-align: justify;
+  }
+}
+
 @media only screen and (max-width: 769px) {
   .route .route-padding {
     max-height: $header-height2;

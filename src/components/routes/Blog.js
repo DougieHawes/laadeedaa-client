@@ -34,6 +34,7 @@ const Blog = () => {
         setBlogItems(fetchedBlog.data.records);
         setLoading(false);
       } catch (error) {
+        console.log(error);
         setErrorMessage(error);
       }
     };

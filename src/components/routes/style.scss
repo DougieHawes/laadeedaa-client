@@ -1,5 +1,99 @@
 @import "../../variables";
 
+.about-container {
+  padding: $padding1;
+  .about-section {
+    .about-section-title {
+      color: $colour3;
+      font-size: 35px;
+      margin-bottom: 14px;
+    }
+    .about-section-text {
+      font-size: 21px;
+      margin-bottom: 42px;
+    }
+  }
+  .about-image-container {
+    @include align-centre;
+    margin-bottom: 42px;
+    max-width: 600px;
+    width: 100%;
+    .about-image {
+      border: 12px double $colour3;
+      padding: $padding1;
+      width: 100%;
+    }
+  }
+  .about-section1 {
+    max-width: 700px;
+  }
+  .about-section2 {
+    margin-left: auto;
+    max-width: 700px;
+    text-align: right;
+    .about-section-title,
+    .about-section-text {
+    }
+  }
+  .about-section3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 21px;
+    .about-section3-left {
+      .about-avatar {
+        @include align-centre;
+        border: $border1;
+        border-radius: 50%;
+        min-width: 300px;
+        max-width: 420px;
+        width: 100%;
+      }
+    }
+    .about-section3-right {
+      .about-section-title,
+      .about-section-text {
+        text-align: center;
+      }
+    }
+  }
+  .about-section4 {
+    @include align-centre;
+    margin-bottom: 42px;
+    max-width: 600px;
+    width: 100%;
+    .about-section-title,
+    .about-section-text {
+      text-align: center;
+    }
+    .about-section-text {
+      margin-bottom: 14px;
+    }
+    .about-contact-grid {
+      @include align-centre;
+      display: flex;
+      justify-content: space-between;
+      width: 320px;
+      .about-contact-grid-item {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        min-width: 80px;
+        .about-contact-text {
+          color: $colour3;
+          font-size: 18px;
+          margin-bottom: $gap1;
+        }
+        .about-contact-link {
+          .about-contact-icon {
+            width: 60px;
+          }
+        }
+      }
+    }
+  }
+}
+
 .blog-grid {
   display: flex;
   flex-wrap: wrap;
@@ -18,4 +112,30 @@
   display: flex;
   flex-wrap: wrap;
   gap: $padding1;
+}
+
+@media only screen and (max-width: 769px) {
+  .about-container {
+    .about-section {
+      .about-section-title {
+        font-size: 28px;
+        margin-bottom: 7px;
+      }
+      .about-section-text {
+        font-size: 18px;
+        margin-bottom: 28px;
+      }
+    }
+    .about-image-container {
+      @include align-centre;
+      margin-bottom: 28px;
+    }
+    .about-section3 {
+      grid-template-columns: 1fr;
+      margin-bottom: 7px;
+    }
+    .about-section4 {
+      margin-bottom: 28px;
+    }
+  }
 }

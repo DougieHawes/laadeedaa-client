@@ -15,7 +15,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const Products = () => {
-  const [products, setProducts] = useState();
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
 
@@ -48,23 +48,26 @@ const Products = () => {
     return <ErrorMessage />;
   }
 
-  const Content = () => (
-    <div className="products-grid">
-      {products.map((p) => (
-        <Card1
-          description={p.fields.description}
-          image={p.fields.image[0].url}
-          key={p.id}
-          stocked={p.fields.stocked}
-          subtitle={p.fields.subtitle}
-          title={p.fields.title}
-        />
-      ))}
-    </div>
-  );
-
   if (products) {
-    return <Route content={<Content />} title={"products"} />;
+    return (
+      <Route
+        content={
+          <div className="products-grid">
+            {products.map((p) => (
+              <Card1
+                description={p.fields.description}
+                image={p.fields.image[0].url}
+                key={p.id}
+                stocked={p.fields.stocked}
+                subtitle={p.fields.subtitle}
+                title={p.fields.title}
+              />
+            ))}
+          </div>
+        }
+        title={"products"}
+      />
+    );
   }
 };
 

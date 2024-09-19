@@ -45,15 +45,6 @@ const Product = () => {
 
   const { description, image, stocked, subtitle } = focusedProduct;
 
-  const Content = () => (
-    <Card2
-      description={description}
-      image={image?.[0]?.url}
-      stocked={stocked}
-      subtitle={subtitle}
-    />
-  );
-
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -61,7 +52,20 @@ const Product = () => {
     return <div>{errorMessage}</div>;
   }
 
-  return <Route content={<Content />} stocked={stocked} title={title} />;
+  return (
+    <Route
+      content={
+        <Card2
+          description={description}
+          image={image?.[0]?.url}
+          stocked={stocked}
+          subtitle={subtitle}
+        />
+      }
+      stocked={stocked}
+      title={title}
+    />
+  );
 };
 
 export default Product;

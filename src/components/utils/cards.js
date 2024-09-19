@@ -3,66 +3,91 @@
 import "./style.scss";
 
 // package imports
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-export const Card1 = ({ description, image, stocked, subtitle, title }) => (
-  <div className="card card1">
-    <div className="card-header card1-header">
-      <h3 className="card-title card1-title">{title}</h3>
-      <p className="card-subtitle card1-subtitle">{subtitle}</p>
-    </div>
-    <div className="card-image-container card1-image-container">
-      <img
-        className="card-image card1-image"
-        src={image}
-        alt={`visual for ${title}`}
-      />
-    </div>
-    <div className="card-main card1-main">
-      <div
-        className="card-text card1-text"
-        dangerouslySetInnerHTML={{ __html: description }}
-      ></div>
-      <div className="card-buttons card1-buttons">
-        {stocked === "true" ? (
+export const Card1 = ({ description, image, stocked, subtitle, title }) => {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 });
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.div
+      className="card card1"
+      ref={ref}
+      initial={{ opacity: 0, y: 70 }}
+      animate={controls}
+      transition={{ duration: 0.7 }}
+    >
+      <div className="card-header card1-header">
+        <h3 className="card-title card1-title">{title}</h3>
+        <p className="card-subtitle card1-subtitle">{subtitle}</p>
+      </div>
+      <div className="card-image-container card1-image-container">
+        <img
+          className="card-image card1-image"
+          src={image}
+          alt={`visual for ${title}`}
+        />
+      </div>
+      <div className="card-main card1-main">
+        <div
+          className="card-text card1-text"
+          dangerouslySetInnerHTML={{ __html: description }}
+        ></div>
+        <div className="card-buttons card1-buttons">
+          {stocked === "true" ? (
+            <div className="card-button-container card1-button-container">
+              <p className="card-button-text card1-button-text">in stock</p>
+              <a
+                className="card-button card-button-red card1-button"
+                href="https://www.etsy.com/uk/shop/LaaDeeDaaUK"
+                rel="noreferrer"
+                target="_blank"
+              >
+                buy now
+              </a>
+            </div>
+          ) : (
+            <div className="card-button-container card1-button-container">
+              <p className="card-button-text card1-button-text">interested?</p>
+              <Link
+                to="/contact"
+                className="card-button card-button-red card1-button"
+              >
+                contact me
+              </Link>
+            </div>
+          )}
           <div className="card-button-container card1-button-container">
-            <p className="card-button-text card1-button-text">in stock</p>
-            <a
-              className="card-button card-button-red card1-button"
-              href="https://www.etsy.com/uk/shop/LaaDeeDaaUK"
-              rel="noreferrer"
-              target="_blank"
-            >
-              buy now
-            </a>
-          </div>
-        ) : (
-          <div className="card-button-container card1-button-container">
-            <p className="card-button-text card1-button-text">interested?</p>
+            <p className="card-button-text card1-button-text">more details</p>
             <Link
-              to="/contact"
-              className="card-button card-button-red card1-button"
+              to={`/${title}`}
+              className="card-button card-button-green card1-button"
             >
-              contact me
+              click here
             </Link>
           </div>
-        )}
-        <div className="card-button-container card1-button-container">
-          <p className="card-button-text card1-button-text">more details</p>
-          <Link
-            to={`/${title}`}
-            className="card-button card-button-green card1-button"
-          >
-            click here
-          </Link>
         </div>
       </div>
-    </div>
-  </div>
-);
+    </motion.div>
+  );
+};
 
 export const Card2 = ({ description, image, stocked, subtitle, title }) => (
-  <div className="card2">
+  <motion.div
+    className="card2"
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7 }}
+  >
     <div className="card2-image-container">
       <img className="card2-image" src={image} alt={`visual for ${title}`} />
       <div className="card2-buttons">
@@ -101,7 +126,7 @@ export const Card2 = ({ description, image, stocked, subtitle, title }) => (
         dangerouslySetInnerHTML={{ __html: description }}
       ></div>
     </div>
-  </div>
+  </motion.div>
 );
 
 const setToDate = (d) => {
@@ -167,30 +192,47 @@ const setToDate = (d) => {
   return `${day} ${month} '${year}`;
 };
 
-export const Card3 = ({ date, id, image, text, title }) => (
-  <div className="card3">
-    <div className="card3-image-container">
-      <img className="card3-image" src={image} alt="" />
-    </div>
-    <div className="card3-body">
-      <div className="card3-body-header">
-        <h3 className="card3-title">{title}</h3>
-        <p className="card3-date">{setToDate(date)}</p>
+export const Card3 = ({ date, id, image, text, title }) => {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 });
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.div
+      className="card3"
+      ref={ref}
+      initial={{ opacity: 0, y: 70 }}
+      animate={controls}
+      transition={{ duration: 0.7 }}
+    >
+      <div className="card3-image-container">
+        <img className="card3-image" src={image} alt="" />
       </div>
-      <div className="card3-text-body">
-        <div
-          className="card3-text"
-          dangerouslySetInnerHTML={{ __html: text }}
-        ></div>
+      <div className="card3-body">
+        <div className="card3-body-header">
+          <h3 className="card3-title">{title}</h3>
+          <p className="card3-date">{setToDate(date)}</p>
+        </div>
+        <div className="card3-text-body">
+          <div
+            className="card3-text"
+            dangerouslySetInnerHTML={{ __html: text }}
+          ></div>
+        </div>
       </div>
-    </div>
-    <div className="card3-buttons">
-      <Link className="card3-button" to={`/blog/${id}`}>
-        read more
-      </Link>
-    </div>
-  </div>
-);
+      <div className="card3-buttons">
+        <Link className="card3-button" to={`/blog/${id}`}>
+          read more
+        </Link>
+      </div>
+    </motion.div>
+  );
+};
 
 export const Card4 = ({ date, image, text, title }) => (
   <div className="card4">

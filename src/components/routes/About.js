@@ -1,6 +1,7 @@
 // file imports
 // images
 import Avatar from "../../media/images/avatar.jpg";
+import Frame from "../../media/images/frame.png";
 import Image1 from "../../media/images/image1.jpg";
 import Email from "../../media/images/social-email.png";
 import Etsy from "../../media/images/social-etsy.png";
@@ -29,6 +30,7 @@ const About = () => {
         </p>
       </div>
       <div className="about-image-container">
+        <img className="about-frame" src={Frame} alt="" />
         <img className="about-image" src={Image1} alt="" />
       </div>
       <div className="about-section about-section2">

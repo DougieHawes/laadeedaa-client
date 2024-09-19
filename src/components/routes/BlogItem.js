@@ -20,6 +20,8 @@ const Blog = () => {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
 
+  const { blogid } = useParams();
+
   useEffect(() => {
     const getBlogItem = async () => {
       try {
@@ -32,22 +34,18 @@ const Blog = () => {
             },
           }
         );
-        const fetchedItems = await response.data.records;
-        fetchedItems.map((f) => {
-          if (f.id === blogid) {
-            setBlogItem(f);
-            setLoading(false);
-          }
-        });
+        const records = await response.data.records;
+        const fetchedItem = records.find((r) => r.id === blogid);
+        setBlogItem(fetchedItem);
+        setLoading(false);
       } catch (error) {
         setErrorMessage(error);
+        setLoading(false);
       }
     };
 
     getBlogItem();
-  }, []);
-
-  const { blogid } = useParams();
+  }, [blogid]);
 
   if (loading) {
     return <Loading />;

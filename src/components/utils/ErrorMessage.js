@@ -3,7 +3,7 @@
 import "./style.scss";
 
 const ErrorMessage = ({ message }) => {
-  return <div>{message}</div>;
+  return <div>ERROR: {message}</div>;
 };
 
 export default ErrorMessage;

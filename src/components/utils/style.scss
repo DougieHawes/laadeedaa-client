@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  overflow-x: hidden;
   .route-padding {
     max-height: $header-height1;
     min-height: $header-height1;
@@ -23,6 +24,11 @@
       padding-top: 50px;
     }
   }
+}
+
+.screen-message {
+  padding: $padding1;
+  padding-top: $header-height1;
 }
 
 .button {

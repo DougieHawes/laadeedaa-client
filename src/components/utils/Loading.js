@@ -3,7 +3,7 @@
 import "./style.scss";
 
 const Loading = () => {
-  return <div>Loading</div>;
+  return <div className="screen-message">Loading</div>;
 };
 
 export default Loading;

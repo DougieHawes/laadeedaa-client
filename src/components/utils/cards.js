@@ -234,16 +234,23 @@ export const Card3 = ({ date, id, image, text, title }) => {
   );
 };
 
-export const Card4 = ({ date, image, text, title }) => (
-  <div className="card4">
-    <div className="card4-image-container">
-      <img className="card4-image" src={image} alt="" />
-    </div>
-    <h3 className="card4-title">{title}</h3>
-    <p className="card4-date">{setToDate(date)}</p>
-    <div
-      className="card4-text"
-      dangerouslySetInnerHTML={{ __html: text }}
-    ></div>
-  </div>
-);
+export const Card4 = ({ date, image, text, title }) => {
+  return (
+    <motion.div
+      className="card4"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+    >
+      <div className="card4-image-container">
+        <img className="card4-image" src={image} alt="" />
+      </div>
+      <h3 className="card4-title">{title}</h3>
+      <p className="card4-date">{setToDate(date)}</p>
+      <div
+        className="card4-text"
+        dangerouslySetInnerHTML={{ __html: text }}
+      ></div>
+    </motion.div>
+  );
+};

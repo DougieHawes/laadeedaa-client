@@ -14,13 +14,13 @@
     }
   }
   .about-image-container {
-    @include align-centre;
     height: 600px;
     margin-bottom: 42px;
-    width: 600px;
+    width: 100%;
     position: relative;
     .about-frame,
     .about-image {
+      @include align-centre;
       position: absolute;
     }
     .about-frame {
@@ -29,9 +29,8 @@
       z-index: 2;
     }
     .about-image {
-      left: 8%;
-      top: 8%;
-      width: 84%;
+      top: 50px;
+      width: 500px;
       z-index: 1;
     }
   }
@@ -138,10 +137,9 @@
       }
     }
     .about-image-container {
-      @include align-centre;
       height: 300px;
       margin-bottom: 28px;
-      width: 300px;
+      width: 100%;
       .about-frame,
       .about-image {
         position: absolute;
@@ -153,9 +151,9 @@
         width: 300px;
       }
       .about-image {
-        left: 8%;
-        top: 8%;
-        width: 84%;
+        left: 0;
+        top: 25px;
+        width: 250px;
         z-index: 1;
       }
     }

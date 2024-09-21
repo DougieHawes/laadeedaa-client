@@ -26,6 +26,105 @@
   }
 }
 
+.about-section {
+  .about-section-title {
+    color: $colour3;
+    font-size: 35px;
+    margin-bottom: 14px;
+  }
+  .about-section-text {
+    font-size: 21px;
+    margin-bottom: 42px;
+  }
+}
+.about-image-container {
+  height: 600px;
+  margin-bottom: 42px;
+  width: 100%;
+  position: relative;
+  .about-frame,
+  .about-image {
+    @include align-centre;
+    position: absolute;
+  }
+  .about-frame {
+    left: 0;
+    top: 0;
+    z-index: 2;
+  }
+  .about-image {
+    top: 50px;
+    width: 500px;
+    z-index: 1;
+  }
+}
+.about-section1 {
+  max-width: 700px;
+}
+.about-section2 {
+  margin-left: auto;
+  max-width: 700px;
+  text-align: right;
+}
+.about-section4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 21px;
+  .about-section4-left {
+    .about-avatar {
+      @include align-centre;
+      border: $border1;
+      border-radius: 50%;
+      min-width: 280px;
+      max-width: 280px;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+  .about-section4-right {
+    .about-section-title,
+    .about-section-text {
+      text-align: center;
+    }
+  }
+}
+.about-section5 {
+  @include align-centre;
+  margin-bottom: 42px;
+  max-width: 600px;
+  width: 100%;
+  .about-section-title,
+  .about-section-text {
+    text-align: center;
+  }
+  .about-section-text {
+    margin-bottom: 14px;
+  }
+  .about-contact-grid {
+    @include align-centre;
+    width: 420px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    .about-contact-grid-item {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      min-width: 80px;
+      .about-contact-text {
+        color: $colour3;
+        font-size: 18px;
+        margin-bottom: $gap1;
+      }
+      .about-contact-link {
+        .about-contact-icon {
+          width: 60px;
+        }
+      }
+    }
+  }
+}
+
 .screen-message {
   padding: $padding1;
   padding-top: $header-height1;
@@ -97,6 +196,14 @@
 }
 .link-1-contact:hover {
   border-color: rgba($color: $colour3, $alpha: 1);
+}
+
+.link-2 {
+  overflow: visible;
+  .link-2-icon {
+    margin-left: 28px;
+    width: 42px;
+  }
 }
 
 .card {
@@ -224,10 +331,11 @@
     .card2-main-subtitle {
       border-bottom: $border2;
       color: $colour3;
-      font-size: 18px;
+      font-size: 28px;
       padding-left: $padding1;
     }
     .card2-text {
+      font-size: 21px;
       padding: $padding1;
       text-align: justify;
     }
@@ -256,8 +364,10 @@
       }
     }
     .card3-text-body {
+      font-size: 18px;
       max-height: 210px;
       overflow: hidden;
+      padding: $padding1;
       .card3-text {
         text-align: justify;
       }
@@ -291,13 +401,20 @@
 .card4 {
   margin-top: -35px;
   .card4-image-container {
-    border-radius: $border-radius1;
-    max-width: 420px;
-    min-width: 300px;
-    width: 100%;
+    min-height: 420px;
+    max-height: 420px;
+    overflow: hidden;
+    position: relative;
+    width: 600px;
     @include align-centre;
+    .card4-frame {
+      position: absolute;
+    }
     .card4-image {
-      width: 100%;
+      left: 35px;
+      top: 35px;
+      position: absolute;
+      width: 530px;
     }
   }
   .card4-title {
@@ -312,6 +429,7 @@
     text-align: center;
   }
   .card4-text {
+    font-size: 18px;
     padding: $padding1;
     text-align: justify;
   }
@@ -321,6 +439,62 @@
   .route .route-padding {
     max-height: $header-height2;
     min-height: $header-height2;
+  }
+
+  .about-section {
+    .about-section-title {
+      font-size: 28px;
+      margin-bottom: 7px;
+    }
+    .about-section-text {
+      font-size: 18px;
+      margin-bottom: 28px;
+    }
+  }
+  .about-image-container {
+    height: 210px;
+    margin-bottom: 28px;
+    width: 100%;
+    .about-frame,
+    .about-image {
+      position: absolute;
+    }
+    .about-frame {
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 210px;
+    }
+    .about-image {
+      left: 0;
+      top: 21px;
+      width: 210px;
+      z-index: 1;
+    }
+  }
+  .about-section4 {
+    grid-template-columns: 1fr;
+    margin-bottom: 7px;
+  }
+  .about-section5 {
+  }
+  .about-section5 {
+    margin-bottom: 28px;
+    .about-contact-grid {
+      @include align-centre;
+      width: 300px;
+      .about-contact-grid-item {
+        min-width: 60px;
+        .about-contact-text {
+          font-size: 14px;
+        }
+        .about-contact-link {
+          .about-contact-icon {
+            width: 42px;
+          }
+        }
+      }
+    }
   }
 
   .card2 {
@@ -340,6 +514,28 @@
       }
       .card3-text-body {
         max-height: 210px;
+      }
+    }
+  }
+
+  .card4 {
+    margin-top: -35px;
+    .card4-image-container {
+      min-height: 226px;
+      max-height: 226px;
+      overflow: hidden;
+      position: relative;
+      width: 320px;
+      @include align-centre;
+      .card4-frame {
+        position: absolute;
+        width: 320px;
+      }
+      .card4-image {
+        left: 20px;
+        top: 20px;
+        position: absolute;
+        width: 280px;
       }
     }
   }

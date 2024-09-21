@@ -1,4 +1,6 @@
 // file imports
+// images
+import Frame from "../../media/images/frame2.png";
 // style
 import "./style.scss";
 
@@ -243,6 +245,7 @@ export const Card4 = ({ date, image, text, title }) => {
       transition={{ duration: 0.7 }}
     >
       <div className="card4-image-container">
+        <img className="card4-frame" src={Frame} alt="" />
         <img className="card4-image" src={image} alt="" />
       </div>
       <h3 className="card4-title">{title}</h3>

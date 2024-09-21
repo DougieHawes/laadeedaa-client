@@ -4,7 +4,7 @@
   border-bottom: $border1;
   max-height: $header-height1;
   min-height: $header-height1;
-  overflow: hidden;
+  overflow: visible;
   padding: $padding1;
   position: absolute;
   width: 100vw;
@@ -27,6 +27,28 @@
       display: flex;
       gap: 14px;
       justify-content: space-between;
+    }
+    .header-contact-links {
+      .header-contact-links-tab {
+        color: $colour4;
+        cursor: pointer;
+        font-size: 21px;
+        font-weight: bold;
+      }
+      .header-contact-links-dropdown {
+        display: flex;
+        flex-direction: column;
+        height: 0;
+        justify-content: space-between;
+        overflow: hidden;
+        position: absolute;
+        transition: height $transition1 ease-in-out;
+      }
+    }
+    .header-contact-links:hover {
+      .header-contact-links-dropdown {
+        height: 420px;
+      }
     }
   }
 }

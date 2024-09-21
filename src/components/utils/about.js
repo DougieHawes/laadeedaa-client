@@ -1,10 +1,11 @@
 // file imports
 // images
 import Avatar from "../../media/images/avatar.jpg";
-import Frame from "../../media/images/frame.png";
+import Frame from "../../media/images/frame1.png";
 import Image1 from "../../media/images/image1.jpg";
 import Email from "../../media/images/social-email.png";
 import Etsy from "../../media/images/social-etsy.png";
+import Linktree from "../../media/images/social-links.png";
 import Phone from "../../media/images/social-phone.png";
 import Whatsapp from "../../media/images/social-whatsapp.png";
 // style
@@ -18,7 +19,7 @@ import { useInView } from "react-intersection-observer";
 
 export const About1 = ({ title, text }) => {
   const controls = useAnimation();
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   useEffect(() => {
     if (inView) {
@@ -42,7 +43,7 @@ export const About1 = ({ title, text }) => {
 
 export const About2 = ({ title, text }) => {
   const controls = useAnimation();
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   useEffect(() => {
     if (inView) {
@@ -66,7 +67,7 @@ export const About2 = ({ title, text }) => {
 
 export const About3 = () => {
   const controls = useAnimation();
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   useEffect(() => {
     if (inView) {
@@ -90,7 +91,7 @@ export const About3 = () => {
 
 export const About4 = () => {
   const controls = useAnimation();
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   useEffect(() => {
     if (inView) {
@@ -100,16 +101,16 @@ export const About4 = () => {
 
   return (
     <motion.div
-      className="about-section about-section3"
+      className="about-section about-section4"
       ref={ref}
       initial={{ opacity: 0 }}
       animate={controls}
       transition={{ duration: 0.7 }}
     >
-      <div className="about-section3-left">
+      <div className="about-section4-left">
         <img className="about-avatar" src={Avatar} alt="Dougie Hawes" />
       </div>
-      <div className="about-section3-right">
+      <div className="about-section4-right">
         <h3 className="about-section-title">Meet the Founder</h3>
         <p className="about-section-text">
           Meet Dougie Hawes, the founder and creative force behind our company.
@@ -126,7 +127,7 @@ export const About4 = () => {
 
 export const About5 = () => {
   const controls = useAnimation();
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   useEffect(() => {
     if (inView) {
@@ -136,7 +137,7 @@ export const About5 = () => {
 
   return (
     <motion.div
-      className="about-section about-section4"
+      className="about-section about-section5"
       ref={ref}
       initial={{ opacity: 0 }}
       animate={controls}
@@ -183,6 +184,7 @@ export const About5 = () => {
           <a
             className="about-contact-link"
             href="tel:+447742148280"
+            target="_blank"
             rel="noreferrer"
           >
             <img
@@ -197,11 +199,27 @@ export const About5 = () => {
           <a
             className="about-contact-link"
             href="https://wa.me/447742148280"
+            target="_blank"
             rel="noreferrer"
           >
             <img
               className="about-contact-icon"
               src={Whatsapp}
+              alt="about contact icon"
+            />
+          </a>
+        </div>
+        <div className="about-contact-grid-item">
+          <p className="about-contact-text">Linktree</p>
+          <a
+            className="about-contact-link"
+            href="linktr.ee/laadeedaaUK"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              className="about-contact-icon"
+              src={Linktree}
               alt="about contact icon"
             />
           </a>

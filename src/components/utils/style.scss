@@ -405,16 +405,17 @@
     max-height: 420px;
     overflow: hidden;
     position: relative;
-    width: 600px;
+    width: 420px;
     @include align-centre;
     .card4-frame {
       position: absolute;
+      width: 420px;
     }
     .card4-image {
       left: 35px;
       top: 35px;
       position: absolute;
-      width: 530px;
+      width: 350px;
     }
   }
   .card4-title {
@@ -521,8 +522,8 @@
   .card4 {
     margin-top: -35px;
     .card4-image-container {
-      min-height: 226px;
-      max-height: 226px;
+      min-height: 320px;
+      max-height: 320px;
       overflow: hidden;
       position: relative;
       width: 320px;
@@ -532,10 +533,10 @@
         width: 320px;
       }
       .card4-image {
-        left: 20px;
-        top: 20px;
+        left: 25px;
+        top: 25px;
         position: absolute;
-        width: 280px;
+        width: 270px;
       }
     }
   }

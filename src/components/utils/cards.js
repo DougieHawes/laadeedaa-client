@@ -1,6 +1,6 @@
 // file imports
 // images
-import Frame from "../../media/images/frame2.png";
+import Frame from "../../media/images/frame1.png";
 // style
 import "./style.scss";
 
@@ -113,12 +113,6 @@ export const Card2 = ({ description, image, stocked, subtitle, title }) => (
             </Link>
           </div>
         )}
-        <div className="card2-button-container">
-          <p className="card2-button-text">more details</p>
-          <Link to={`/${title}`} className="card2-button card2-button-green">
-            click here
-          </Link>
-        </div>
       </div>
     </div>
     <div className="card2-main">

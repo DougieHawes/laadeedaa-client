@@ -220,9 +220,15 @@
     }
   }
   .card-image-container {
-    .card-image {
-      border-radius: $border-radius1;
+    position: relative;
+    .card-frame {
       width: 100%;
+    }
+    .card-image {
+      left: 6%;
+      top: 8%;
+      position: absolute;
+      width: 88%;
     }
   }
   .card-main {
@@ -281,11 +287,20 @@
 .card2 {
   display: grid;
   grid-gap: $gap1;
-  grid-template-columns: 1fr 1fr;
-  .card2-image-container {
-    .card2-image {
-      border-radius: $border-radius1;
-      width: 100%;
+  grid-template-columns: 45% 55%;
+  margin-top: $gap1;
+  .card2-image-box {
+    .card2-image-container {
+      position: relative;
+      .card2-frame {
+        width: 100%;
+      }
+      .card2-image {
+        left: 6%;
+        position: absolute;
+        top: 8%;
+        width: 88%;
+      }
     }
     .card2-buttons {
       display: flex;

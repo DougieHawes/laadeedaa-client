@@ -1,6 +1,7 @@
 // file imports
 // images
 import Frame from "../../media/images/frame1.png";
+import Frame2 from "../../media/images/frame2.png";
 // style
 import "./style.scss";
 
@@ -33,6 +34,11 @@ export const Card1 = ({ description, image, stocked, subtitle, title }) => {
         <p className="card-subtitle card1-subtitle">{subtitle}</p>
       </div>
       <div className="card-image-container card1-image-container">
+        <img
+          className="card-frame card1-frame"
+          src={Frame2}
+          alt={`visual for frame`}
+        />
         <img
           className="card-image card1-image"
           src={image}
@@ -90,8 +96,11 @@ export const Card2 = ({ description, image, stocked, subtitle, title }) => (
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.7 }}
   >
-    <div className="card2-image-container">
-      <img className="card2-image" src={image} alt={`visual for ${title}`} />
+    <div className="card2-image-box">
+      <div className="card2-image-container">
+        <img className="card2-frame" src={Frame2} alt="visual for frame" />
+        <img className="card2-image" src={image} alt={`visual for ${title}`} />
+      </div>
       <div className="card2-buttons">
         {stocked === "true" ? (
           <div className="card2-button-container">

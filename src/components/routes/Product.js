@@ -41,7 +41,7 @@ const Product = () => {
       }
     };
     getProduct();
-  }, [title]);
+  }, []);
 
   const { description, image, stocked, subtitle } = focusedProduct;
 

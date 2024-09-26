@@ -9,20 +9,26 @@ import "./style.scss";
 
 // package imports
 import { useState } from "react";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    email: "",
-    title: "",
-    message: "",
+    name: "Doug",
+    email: "dougiehawes@hotmail.com",
+    title: "Test",
+    message: "test email",
   });
   const [buttonActive, setButtonActive] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);
 
-  const { email, title, message } = formData;
+  const { name, email, title, message } = formData;
+
+  const serviceId = process.env.REACT_APP_EMAIL_SERVICE_ID;
+  const templateId = process.env.REACT_APP_EMAIL_TEMPLATE_ID;
+  const userId = process.env.REACT_APP_EMAIL_USER_ID;
 
   const handleChange = (e) => {
-    if (email && title && message) {
+    if (name && email && title && message) {
       setButtonActive(true);
     } else {
       setButtonActive(false);
@@ -31,13 +37,35 @@ const Contact = () => {
       ...prevState,
       [e.target.name]: e.target.value,
     }));
+
+    if (email && title && message) {
+      setButtonActive(true);
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (email && title && message) {
-      console.log(formData);
+      emailjs
+        .send(
+          serviceId,
+          templateId,
+          {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+          },
+          userId
+        )
+        .then(
+          (result) => {
+            alert("Email successfully sent!");
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
     } else {
       setErrorMessage(true);
     }
@@ -56,6 +84,7 @@ const Contact = () => {
             value={email}
           />
           <Input1 label="title" onChange={handleChange} value={title} />
+          <Input1 label="name" onChange={handleChange} value={name} />
           <Input2 label="message" onChange={handleChange} value={message} />
           <Input3 />
           <Button1 active={buttonActive} onClick={handleSubmit} text="send" />

@@ -13,10 +13,10 @@ import emailjs from "emailjs-com";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "Doug",
-    email: "dougiehawes@hotmail.com",
-    title: "Test",
-    message: "test email",
+    name: "",
+    email: "",
+    title: "",
+    message: "",
   });
   const [buttonActive, setButtonActive] = useState(false);
   const [errorMessage, setErrorMessage] = useState(false);

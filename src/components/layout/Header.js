@@ -35,6 +35,7 @@ const Header = () => {
           <Link1 text="products" to="/" />
           <Link1 text="blog" to="/blog" />
           <Link1 text="about" to="/about" />
+          <Link1 text="reviews" to="/reviews" />
         </div>
         <div className="header-contact-links">
           <div className="header-contact-links-tab">contact</div>

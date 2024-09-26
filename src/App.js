@@ -8,6 +8,7 @@ import BlogItem from "./components/routes/BlogItem";
 import Contact from "./components/routes/Contact";
 import Product from "./components/routes/Product";
 import Products from "./components/routes/Products";
+import Reviews from "./components/routes/Reviews";
 // style
 import "./style.scss";
 
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/contact" element={<Contact />} />
           <Route path="/:title" element={<Product />} />
           <Route exact path="/" element={<Products />} />
+          <Route exact path="/reviews" element={<Reviews />} />
         </Routes>
       </BrowserRouter>
     </div>

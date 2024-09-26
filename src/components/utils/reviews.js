@@ -18,7 +18,7 @@ export const Review1 = ({ name, image, product, text, type }) => {
 
   useEffect(() => {
     if (inView) {
-      controls.start({ opacity: 1, y: 70 });
+      controls.start({ opacity: 1, y: 0 });
     }
   }, [controls, inView]);
 
@@ -44,10 +44,10 @@ export const Review1 = ({ name, image, product, text, type }) => {
         <img className="review-frame" src={getFrameType()} alt="" />
         <img className="review-image" src={image} alt="" />
       </div>
-      <h4 className="review-name">{name}</h4>
       <p className="review-text">{text}</p>
+      <h4 className="review-name">{name}</h4>
       {product && (
-        <Link className="review-link" to={`/products/${product}`}>
+        <Link className="review-link" to={`/${product}`}>
           {product}
         </Link>
       )}

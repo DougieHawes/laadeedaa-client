@@ -454,16 +454,15 @@
 .review {
   .review-image-container {
     @include align-centre;
-    // position: relative;
     width: 420px;
     .review-frame {
       width: 100%;
     }
     .review-image {
-      left: 35px;
+      left: 7%;
       position: absolute;
-      top: 35px;
-      width: 350px;
+      top: 7%;
+      width: 86%;
     }
   }
 }

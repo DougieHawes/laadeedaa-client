@@ -60,6 +60,8 @@ const Reviews = () => {
     return <ErrorMessage />;
   }
 
+  //   const Content = () => <div className="reviews-container">reviews</div>;
+
   const Content = () => (
     <div className="reviews-container">
       {reviews.map((r) => (

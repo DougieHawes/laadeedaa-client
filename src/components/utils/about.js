@@ -213,7 +213,7 @@ export const About5 = () => {
           <p className="about-contact-text">Linktree</p>
           <a
             className="about-contact-link"
-            href="linktr.ee/laadeedaaUK"
+            href="https://www.linktr.ee/laadeedaaUK"
             target="_blank"
             rel="noreferrer"
           >
